@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'wouter';
 
 interface Project {
   id: number;
@@ -12,6 +13,17 @@ interface Project {
 
 export default function ProjectsSection() {
   const [showAllProjects, setShowAllProjects] = useState(false);
+
+  const getProjectRoute = (title: string) => {
+    const routes: { [key: string]: string } = {
+      "Out-of-Order RISC-V CPU (RV32IM)": "/projects/risc-v-cpu",
+      "Datapath Layout in Cadence Virtuoso": "/projects/datapath-layout", 
+      "Real-Time Hardware-Accelerated OHLC Aggregator": "/projects/ohlc-aggregator",
+      "FPGA-based Mortal Kombat Game": "/projects/mortal-kombat-game",
+      "Linux-Like Operating System (x86)": "/projects/linux-os"
+    };
+    return routes[title] || "#";
+  };
 
   const projects: Project[] = [
     {
@@ -70,47 +82,43 @@ export default function ProjectsSection() {
         
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project) => (
-            <div key={project.id} className="project-card bg-white rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src={project.image} 
-                alt={`${project.title} screenshot`} 
-                className="w-full h-48 object-cover" 
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-primary mb-3">{project.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {tech}
+            <Link key={project.id} href={getProjectRoute(project.title)}>
+              <div className="project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                <img 
+                  src={project.image} 
+                  alt={`${project.title} screenshot`} 
+                  className="w-full h-48 object-cover" 
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-primary mb-3">{project.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex space-x-4">
+                      {project.github && (
+                        <span className="text-muted-foreground font-medium">
+                          <i className="fab fa-github mr-2"></i>View Code
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-accent font-medium">
+                      Read More <i className="fas fa-arrow-right ml-1"></i>
                     </span>
-                  ))}
-                </div>
-                <div className="flex space-x-4">
-                  {project.liveDemo && (
-                    <a 
-                      href={project.liveDemo} 
-                      className="text-accent hover:text-accent/80 font-medium transition-colors"
-                    >
-                      <i className="fas fa-external-link-alt mr-2"></i>Live Demo
-                    </a>
-                  )}
-                  {project.github && (
-                    <a 
-                      href={project.github} 
-                      className="text-muted-foreground hover:text-primary font-medium transition-colors"
-                    >
-                      <i className="fab fa-github mr-2"></i>Code
-                    </a>
-                  )}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         
