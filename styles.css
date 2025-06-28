@@ -33,6 +33,21 @@ nav a {
     text-align: center;
 }
 
+.featured {
+    padding: 1em 2em;
+    text-align: center;
+}
+
+.project-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.project-link .icon {
+    margin-right: 0.5em;
+}
+
 .project-list {
     list-style: none;
     padding: 0;
