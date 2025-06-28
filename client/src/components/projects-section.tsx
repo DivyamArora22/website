@@ -32,10 +32,26 @@ export default function ProjectsSection() {
     },
     {
       id: 3,
+      title: "Real-Time Hardware-Accelerated OHLC Aggregator",
+      description: "Designed a fully pipelined FPGA-based system to compute OHLC (Open, High, Low, Close) metrics from NASDAQ and IEX trade feeds in real time. Leveraged AXI-Stream protocols to connect packet parsers, decoders, and a custom OHLC engine, achieving over 9.2 million packets/sec throughput with sub-microsecond latency.",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      technologies: ["FPGA", "AXI-Stream", "High-Frequency Trading", "Real-Time Systems"],
+      github: "https://github.com/DivyamArora22"
+    },
+    {
+      id: 4,
       title: "FPGA-based Mortal Kombat Game",
       description: "Developed a hardware-software co-designed fighting game on a Xilinx FPGA. Integrated MicroBlaze softcore, custom AXI peripherals, VGA controller, and button inputs for real-time gameplay.",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["Xilinx Vivado", "MicroBlaze", "AXI Protocol", "VGA Controller"],
+      github: "https://github.com/DivyamArora22"
+    },
+    {
+      id: 5,
+      title: "Linux-Like Operating System (x86)",
+      description: "Implemented a Linux-like OS kernel for the IA-32 architecture with support for segmentation (GDT, IDT), paging, and device initialization. Developed core kernel components including a terminal driver, Ext2 file system, system call interface, and round-robin scheduler with PCB-based context switching.",
+      image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      technologies: ["C", "x86 Assembly", "Operating Systems", "Kernel Development"],
       github: "https://github.com/DivyamArora22"
     }
   ];
@@ -52,9 +68,9 @@ export default function ProjectsSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project) => (
-            <div key={project.id} className="fade-in-section project-card bg-white rounded-xl overflow-hidden shadow-lg">
+            <div key={project.id} className="project-card bg-white rounded-xl overflow-hidden shadow-lg">
               <img 
                 src={project.image} 
                 alt={`${project.title} screenshot`} 

@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'wouter';
 import { scrollToSection } from '@/lib/utils';
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   const handleNavClick = (sectionId: string) => {
     scrollToSection(sectionId);
@@ -18,36 +20,47 @@ export default function Navigation() {
           </div>
           
           <div className="hidden md:flex space-x-8">
-            <button 
-              onClick={() => handleNavClick('home')} 
-              className="nav-link text-gray-700 hover:text-accent font-medium"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => handleNavClick('about')} 
-              className="nav-link text-gray-700 hover:text-accent font-medium"
-            >
-              About
-            </button>
-            <button 
-              onClick={() => handleNavClick('projects')} 
-              className="nav-link text-gray-700 hover:text-accent font-medium"
-            >
-              Projects
-            </button>
-            <button 
-              onClick={() => handleNavClick('skills')} 
-              className="nav-link text-gray-700 hover:text-accent font-medium"
-            >
-              Skills
-            </button>
-            <button 
-              onClick={() => handleNavClick('contact')} 
-              className="nav-link text-gray-700 hover:text-accent font-medium"
-            >
-              Contact
-            </button>
+            {location === '/' ? (
+              <>
+                <button 
+                  onClick={() => handleNavClick('home')} 
+                  className="nav-link text-gray-700 hover:text-accent font-medium"
+                >
+                  Home
+                </button>
+                <button 
+                  onClick={() => handleNavClick('about')} 
+                  className="nav-link text-gray-700 hover:text-accent font-medium"
+                >
+                  About
+                </button>
+                <button 
+                  onClick={() => handleNavClick('projects')} 
+                  className="nav-link text-gray-700 hover:text-accent font-medium"
+                >
+                  Projects
+                </button>
+                <button 
+                  onClick={() => handleNavClick('skills')} 
+                  className="nav-link text-gray-700 hover:text-accent font-medium"
+                >
+                  Skills
+                </button>
+                <button 
+                  onClick={() => handleNavClick('contact')} 
+                  className="nav-link text-gray-700 hover:text-accent font-medium"
+                >
+                  Contact
+                </button>
+              </>
+            ) : (
+              <Link href="/" className="nav-link text-gray-700 hover:text-accent font-medium">
+                Home
+              </Link>
+            )}
+            <Link href="/resume" className="nav-link text-gray-700 hover:text-accent font-medium">
+              Resume
+            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -63,36 +76,55 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4">
             <div className="flex flex-col space-y-3 pb-4">
-              <button 
-                onClick={() => handleNavClick('home')} 
+              {location === '/' ? (
+                <>
+                  <button 
+                    onClick={() => handleNavClick('home')} 
+                    className="text-gray-700 hover:text-accent font-medium text-left"
+                  >
+                    Home
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('about')} 
+                    className="text-gray-700 hover:text-accent font-medium text-left"
+                  >
+                    About
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('projects')} 
+                    className="text-gray-700 hover:text-accent font-medium text-left"
+                  >
+                    Projects
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('skills')} 
+                    className="text-gray-700 hover:text-accent font-medium text-left"
+                  >
+                    Skills
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('contact')} 
+                    className="text-gray-700 hover:text-accent font-medium text-left"
+                  >
+                    Contact
+                  </button>
+                </>
+              ) : (
+                <Link 
+                  href="/" 
+                  className="text-gray-700 hover:text-accent font-medium text-left"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+              )}
+              <Link 
+                href="/resume" 
                 className="text-gray-700 hover:text-accent font-medium text-left"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                Home
-              </button>
-              <button 
-                onClick={() => handleNavClick('about')} 
-                className="text-gray-700 hover:text-accent font-medium text-left"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => handleNavClick('projects')} 
-                className="text-gray-700 hover:text-accent font-medium text-left"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => handleNavClick('skills')} 
-                className="text-gray-700 hover:text-accent font-medium text-left"
-              >
-                Skills
-              </button>
-              <button 
-                onClick={() => handleNavClick('contact')} 
-                className="text-gray-700 hover:text-accent font-medium text-left"
-              >
-                Contact
-              </button>
+                Resume
+              </Link>
             </div>
           </div>
         )}

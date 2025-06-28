@@ -43,12 +43,6 @@ export default function ContactSection() {
       icon: "fab fa-github",
       value: "View my code",
       link: "https://github.com/DivyamArora22"
-    },
-    {
-      title: "Phone",
-      icon: "fas fa-phone",
-      value: "(217) 305-0860",
-      link: "tel:+12173050860"
     }
   ];
 
@@ -101,7 +95,7 @@ export default function ContactSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {contactItems.map((item) => (
             <div key={item.title} className="fade-in-section text-center">
               <div className="contact-item inline-block p-6 bg-white/10 backdrop-blur-sm rounded-full mb-4 hover:bg-accent/20 cursor-pointer">
@@ -123,11 +117,11 @@ export default function ContactSection() {
         </div>
         
         {/* Contact Form */}
-        <div className="fade-in-section mt-16 max-w-2xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-            <h3 className="text-2xl font-semibold mb-6 text-center">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+        <div className="fade-in-section mt-12 max-w-xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <h3 className="text-xl font-semibold mb-4 text-center">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <input
                     type="text"
@@ -135,7 +129,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors"
                     required
                   />
                 </div>
@@ -146,7 +140,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Your Email"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors"
                     required
                   />
                 </div>
@@ -158,7 +152,7 @@ export default function ContactSection() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder="Subject"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors"
                   required
                 />
               </div>
@@ -168,8 +162,8 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Your Message"
-                  rows={5}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors resize-none"
+                  rows={3}
+                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-accent transition-colors resize-none"
                   required
                 />
               </div>
@@ -177,7 +171,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-accent text-white px-6 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

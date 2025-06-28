@@ -31,17 +31,30 @@ export default function Home() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const skillBars = entry.target.querySelectorAll('.skill-bar');
-          skillBars.forEach(bar => {
-            bar.classList.add('animate');
+          skillBars.forEach((bar, index) => {
+            setTimeout(() => {
+              bar.classList.add('animate');
+            }, index * 100); // Stagger animation for each bar
           });
         }
       });
-    }, { threshold: 0.5 });
+    }, { 
+      threshold: 0.3, // Lower threshold for better mobile detection
+      rootMargin: '0px 0px -50px 0px' // Less aggressive root margin
+    });
 
     const skillsSection = document.querySelector('#skills');
     if (skillsSection) {
       skillObserver.observe(skillsSection);
     }
+
+    // Backup method: Also observe individual skill containers
+    const skillContainers = document.querySelectorAll('.fade-in-section');
+    skillContainers.forEach(container => {
+      if (container.querySelector('.skill-bar')) {
+        skillObserver.observe(container);
+      }
+    });
 
     // Active navigation link highlighting
     const handleScroll = () => {
@@ -71,6 +84,11 @@ export default function Home() {
       if (skillsSection) {
         skillObserver.unobserve(skillsSection);
       }
+      skillContainers.forEach(container => {
+        if (container.querySelector('.skill-bar')) {
+          skillObserver.unobserve(container);
+        }
+      });
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);

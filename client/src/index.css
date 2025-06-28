@@ -106,10 +106,11 @@
 
   .skill-bar {
     @apply w-0 transition-all duration-1000 ease-out;
+    transform-origin: left;
   }
 
   .skill-bar.animate {
-    width: var(--progress);
+    width: var(--progress) !important;
   }
 }
 

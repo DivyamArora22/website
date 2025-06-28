@@ -22,7 +22,12 @@ export default function SkillsSection() {
     { name: "Xilinx Vivado", icon: "fas fa-cogs" },
     { name: "Design Compiler", icon: "fas fa-memory" },
     { name: "Verilator", icon: "fas fa-code" },
-    { name: "TCL Scripting", icon: "fas fa-terminal" }
+    { name: "TCL Scripting", icon: "fas fa-terminal" },
+    { name: "AXI Protocol", icon: "fas fa-exchange-alt" },
+    { name: "Cadence Innovus", icon: "fas fa-layer-group" },
+    { name: "Clock Gating", icon: "fas fa-clock" },
+    { name: "STA", icon: "fas fa-stopwatch" },
+    { name: "FPGA Design", icon: "fas fa-th" }
   ];
 
   return (
@@ -60,7 +65,7 @@ export default function SkillsSection() {
           <div className="fade-in-section">
             <h3 className="text-2xl font-semibold text-primary mb-8">Tools & Frameworks</h3>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
               {tools.map((tool) => (
                 <div 
                   key={tool.name}

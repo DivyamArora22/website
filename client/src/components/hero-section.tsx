@@ -9,7 +9,7 @@ export default function HeroSection() {
             Hi, I'm <span className="text-accent">Divyam Arora</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 font-medium">
-            Computer Engineering Graduate from UIUC
+            Computer Engineering Graduate from UIUC | Specializing in Computer Architecture & Digital Design
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             A hardware engineer passionate about computer architecture and digital design.
@@ -18,7 +18,7 @@ export default function HeroSection() {
             by curiosity, precision, and the pursuit of performance.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
             <button 
               onClick={() => scrollToSection('projects')}
               className="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 hover:scale-105 animate-pulse-glow"
