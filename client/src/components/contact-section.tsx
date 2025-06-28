@@ -29,26 +29,26 @@ export default function ContactSection() {
     {
       title: "Email",
       icon: "fas fa-envelope",
-      value: "john.doe@email.com",
-      link: "mailto:john.doe@email.com"
+      value: "divyama3@illinois.edu",
+      link: "mailto:divyama3@illinois.edu"
     },
     {
       title: "LinkedIn",
       icon: "fab fa-linkedin",
       value: "Connect with me",
-      link: "https://linkedin.com"
+      link: "https://www.linkedin.com/in/divyamarora22"
     },
     {
       title: "GitHub",
       icon: "fab fa-github",
       value: "View my code",
-      link: "https://github.com"
+      link: "https://github.com/DivyamArora22"
     },
     {
       title: "Phone",
       icon: "fas fa-phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "(217) 305-0860",
+      link: "tel:+12173050860"
     }
   ];
 

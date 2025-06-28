@@ -2,19 +2,20 @@ import { scrollToSection } from '@/lib/utils';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-background to-muted flex items-center justify-center pt-20">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center justify-center pt-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <div className="animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight">
-            Hi, I'm <span className="text-accent">John</span>
+            Hi, I'm <span className="text-accent">Divyam Arora</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 font-medium">
-            Computer Engineering Student
+            Computer Engineering Graduate from UIUC
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            Passionate about building innovative solutions through code. 
-            Currently pursuing my degree in Computer Engineering with a focus on 
-            software development and emerging technologies.
+          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            A hardware engineer passionate about computer architecture and digital design.
+            I love building fast, efficient systems from the ground up, whether it's crafting 
+            pipelines, optimizing microarchitecture, or verifying complex designs. I'm driven 
+            by curiosity, precision, and the pursuit of performance.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

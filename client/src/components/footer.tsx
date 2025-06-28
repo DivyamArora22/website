@@ -3,17 +3,17 @@ export default function Footer() {
     {
       name: "GitHub",
       icon: "fab fa-github",
-      url: "https://github.com"
+      url: "https://github.com/DivyamArora22"
     },
     {
       name: "LinkedIn",
       icon: "fab fa-linkedin",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/divyamarora22"
     },
     {
-      name: "Twitter",
-      icon: "fab fa-twitter",
-      url: "https://twitter.com"
+      name: "Email",
+      icon: "fas fa-envelope",
+      url: "mailto:divyama3@illinois.edu"
     }
   ];
 
@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p>&copy; 2024 John Doe. All rights reserved.</p>
+            <p>&copy; 2025 Divyam Arora. All rights reserved.</p>
           </div>
           <div className="flex space-x-6">
             {socialLinks.map((link) => (

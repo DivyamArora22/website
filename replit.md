@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a personal portfolio website for a computer engineering student named John Doe. The application is built as a full-stack web application using React for the frontend and Express.js for the backend, with a PostgreSQL database for data persistence. The project showcases modern web development practices with a clean, professional design using Tailwind CSS and shadcn/ui components.
+This is a personal portfolio website for a hardware engineer and computer engineering graduate named Divyam Arora. The application is built as a full-stack web application using React for the frontend and Express.js for the backend, with a PostgreSQL database for data persistence. The project showcases modern web development practices with a clean, professional design using Tailwind CSS and shadcn/ui components.
 
 ## System Architecture
 
@@ -97,6 +97,13 @@ This is a personal portfolio website for a computer engineering student named Jo
 ```
 Changelog:
 - June 28, 2025. Initial setup
+- June 28, 2025. Updated with Divyam Arora's personal details:
+  * Hero section with name, title, and bio
+  * About section with UIUC education and hardware engineering focus
+  * Skills section with SystemVerilog, CPU design, verification tools
+  * Projects section with RISC-V CPU, Cadence layout, FPGA game
+  * Contact information with email, LinkedIn, GitHub, phone
+  * Footer with updated social links and copyright
 ```
 
 ## User Preferences
