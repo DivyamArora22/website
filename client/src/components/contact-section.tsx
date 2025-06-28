@@ -98,19 +98,27 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {contactItems.map((item) => (
             <div key={item.title} className="fade-in-section text-center">
-              <div className="contact-item inline-block p-6 bg-white/10 backdrop-blur-sm rounded-full mb-4 hover:bg-accent/20 cursor-pointer">
-                <i className={`${item.icon} text-3xl text-accent`}></i>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
               {item.link ? (
                 <a 
                   href={item.link}
-                  className="text-gray-300 hover:text-accent transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  {item.value}
+                  <div className="contact-item inline-block p-6 bg-white/10 backdrop-blur-sm rounded-full mb-4 hover:bg-accent/20 cursor-pointer">
+                    <i className={`${item.icon} text-3xl text-accent`}></i>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-300 hover:text-accent transition-colors">{item.value}</p>
                 </a>
               ) : (
-                <p className="text-gray-300">{item.value}</p>
+                <>
+                  <div className="contact-item inline-block p-6 bg-white/10 backdrop-blur-sm rounded-full mb-4 hover:bg-accent/20 cursor-pointer">
+                    <i className={`${item.icon} text-3xl text-accent`}></i>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-300">{item.value}</p>
+                </>
               )}
             </div>
           ))}
