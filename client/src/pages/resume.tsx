@@ -11,7 +11,7 @@ export default function Resume() {
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Resume</h1>
             <p className="text-xl text-muted-foreground">
-              Divyam Arora - Computer Engineering Graduate
+              Divyam Arora
             </p>
           </div>
           
@@ -51,20 +51,6 @@ export default function Resume() {
             </div>
           </div>
           
-          <div className="text-center mt-8">
-            <p className="text-gray-600">
-              For the best viewing experience, you can 
-              <a 
-                href="/resume.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-accent hover:underline ml-1 mr-1"
-              >
-                open the PDF in a new tab
-              </a>
-              or download it to your device.
-            </p>
-          </div>
         </div>
       </main>
       

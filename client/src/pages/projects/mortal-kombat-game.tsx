@@ -27,7 +27,7 @@ export default function MortalKombatGameProject() {
           {/* Project Header */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
             <img 
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600"
+              src="/images/mortal-kombat.jpeg"
               alt="FPGA-based Mortal Kombat Game"
               className="w-full h-64 object-cover"
             />

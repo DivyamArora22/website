@@ -28,7 +28,7 @@ export default function DatapathLayoutProject() {
           {/* Project Header */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
             <img 
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600"
+              src="/images/vlsi.jpeg"
               alt="Datapath Layout in Cadence Virtuoso"
               className="w-full h-64 object-cover"
             />
@@ -109,8 +109,8 @@ export default function DatapathLayoutProject() {
                   </div>
                   <p className="text-gray-600 leading-relaxed">
                     Developed a comprehensive standard cell library from ground up, including basic logic gates, 
-                    complex gates, sequential elements, and specialized datapath cells. Each cell was carefully 
-                    characterized for timing, power, and area metrics across different operating conditions.
+                    complex gates, sequential elements, and specialized datapath cells. Each cell was 
+                    characterized for timing, power, and area.
                   </p>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-4">
@@ -244,7 +244,7 @@ export default function DatapathLayoutProject() {
                 </div>
                 <div className="bg-black rounded-lg p-4">
                   <img 
-                    src="/assets/datapath_manual.png" 
+                    src="/images/datapath_manual.png" 
                     alt="Manual datapath layout showing 32-bit slice design"
                     className="w-full h-48 object-contain rounded"
                   />
@@ -261,12 +261,12 @@ export default function DatapathLayoutProject() {
                     Automated P&R Processor Layout
                   </h4>
                   <p className="text-sm text-gray-600 mb-3">
-                    TCL script-driven automated placement and routing achieving optimized area utilization and improved timing.
+                    TCL script-driven automated PnR achieving optimized area utilization and improved timing.
                   </p>
                 </div>
                 <div className="bg-black rounded-lg p-4">
                   <img 
-                    src="/assets/cpu2.png" 
+                    src="/images/cpu2.png" 
                     alt="Automated place and route processor layout"
                     className="w-full h-48 object-contain rounded"
                   />

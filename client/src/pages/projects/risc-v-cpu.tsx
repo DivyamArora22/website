@@ -27,7 +27,7 @@ export default function RiscVCpuProject() {
           {/* Project Header */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
             <img 
-              src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600"
+              src="/images/riscv.png"
               alt="Out-of-Order RISC-V CPU"
               className="w-full h-64 object-cover"
             />
@@ -115,7 +115,7 @@ export default function RiscVCpuProject() {
                   <p className="text-gray-600 leading-relaxed">
                     The processor implements explicit register renaming with modern out-of-order execution. Instructions are fetched, decoded, 
                     and dispatched to reservation stations where they wait for operands. The explicit register renaming mechanism eliminates 
-                    WAR and WAW hazards, allowing for maximum instruction-level parallelism with integrated DesignWare multiplication and division IPs.
+                    WAR and WAW hazards.
                   </p>
                 </div>
 
@@ -228,11 +228,11 @@ export default function RiscVCpuProject() {
                     <div className="text-xs text-gray-600">Pipeline Stages</div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-accent">64</div>
+                    <div className="text-2xl font-bold text-accent">16</div>
                     <div className="text-xs text-gray-600">ROB Entries</div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-accent">16KB</div>
+                    <div className="text-2xl font-bold text-accent">8KB</div>
                     <div className="text-xs text-gray-600">L1 Cache</div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 text-center">

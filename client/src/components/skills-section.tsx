@@ -17,17 +17,14 @@ export default function SkillsSection() {
   ];
 
   const tools: Tool[] = [
-    { name: "Synopsys VCS", icon: "fas fa-microchip" },
-    { name: "Cadence Virtuoso", icon: "fas fa-drafting-compass" },
+    { name: "Synopsys Suite", icon: "fas fa-microchip" },
+    { name: "Cadence Suite", icon: "fas fa-drafting-compass" },
     { name: "Xilinx Vivado", icon: "fas fa-cogs" },
-    { name: "Design Compiler", icon: "fas fa-memory" },
-    { name: "Verilator", icon: "fas fa-code" },
+    { name: "Verilog", icon: "fas fa-code-branch" },
+    { name: "RISC-V", icon: "fas fa-cpu" },
     { name: "TCL Scripting", icon: "fas fa-terminal" },
-    { name: "AXI Protocol", icon: "fas fa-exchange-alt" },
-    { name: "Cadence Innovus", icon: "fas fa-layer-group" },
-    { name: "Clock Gating", icon: "fas fa-clock" },
-    { name: "STA", icon: "fas fa-stopwatch" },
-    { name: "FPGA Design", icon: "fas fa-th" }
+    { name: "Python", icon: "fab fa-python" },
+    { name: "C/C++", icon: "fas fa-code" }
   ];
 
   return (
@@ -65,14 +62,14 @@ export default function SkillsSection() {
           <div className="fade-in-section">
             <h3 className="text-2xl font-semibold text-primary mb-8">Tools & Frameworks</h3>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {tools.map((tool) => (
                 <div 
                   key={tool.name}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-accent/10 transition-colors group"
+                  className="text-center p-3 bg-gray-50 rounded-lg hover:bg-accent/10 transition-colors group"
                 >
-                  <i className={`${tool.icon} text-3xl text-muted-foreground group-hover:text-accent mb-2 transition-colors`}></i>
-                  <p className="font-medium text-gray-700">{tool.name}</p>
+                  <i className={`${tool.icon} text-2xl text-muted-foreground group-hover:text-accent mb-2 transition-colors`}></i>
+                  <p className="font-medium text-gray-700 text-sm">{tool.name}</p>
                 </div>
               ))}
             </div>

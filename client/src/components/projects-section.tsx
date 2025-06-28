@@ -30,7 +30,7 @@ export default function ProjectsSection() {
       id: 1,
       title: "Out-of-Order RISC-V CPU (RV32IM)",
       description: "Designed and implemented a 5-stage pipelined OoO processor with register renaming, GShare branch prediction, and a 4-way set-associative cache. Integrated RAT, ROB, RS, LSQ, and bypassing logic.",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      image: "/images/riscv.png",
       technologies: ["SystemVerilog", "RISC-V", "OoO Execution", "Cache Design"],
       github: "https://github.com/DivyamArora22"
     },
@@ -38,7 +38,7 @@ export default function ProjectsSection() {
       id: 2,
       title: "Datapath Layout in Cadence Virtuoso",
       description: "Designed and laid out the datapath of a custom 32-bit processor using Cadence Virtuoso. Performed DRC, LVS, and parasitic extraction, optimizing for area, timing, and power using standard-cell-based methodology.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      image: "/images/vlsi.jpeg",
       technologies: ["Cadence Virtuoso", "VLSI Layout", "DRC/LVS", "Physical Design"],
       github: "https://github.com/DivyamArora22"
     },
@@ -54,7 +54,7 @@ export default function ProjectsSection() {
       id: 4,
       title: "FPGA-based Mortal Kombat Game",
       description: "Developed a hardware-software co-designed fighting game on a Xilinx FPGA. Integrated MicroBlaze softcore, custom AXI peripherals, VGA controller, and button inputs for real-time gameplay.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      image: "/images/mortal-kombat.jpeg",
       technologies: ["Xilinx Vivado", "MicroBlaze", "AXI Protocol", "VGA Controller"],
       github: "https://github.com/DivyamArora22"
     },
