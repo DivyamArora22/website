@@ -83,19 +83,19 @@ export default function ProjectsSection() {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project) => (
             <Link key={project.id} href={getProjectRoute(project.title)}>
-              <div className="project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer">
+              <div className="project-card bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer h-[520px] flex flex-col">
                 <img 
                   src={project.image} 
                   alt={`${project.title} screenshot`} 
-                  className="w-full h-48 object-cover" 
+                  className="w-full h-48 object-cover flex-shrink-0" 
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold text-primary mb-3 line-clamp-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed flex-grow line-clamp-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 3).map((tech) => (
                       <span 
                         key={tech}
                         className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium"
@@ -103,8 +103,13 @@ export default function ProjectsSection() {
                         {tech}
                       </span>
                     ))}
+                    {project.technologies.length > 3 && (
+                      <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-auto">
                     <div className="flex space-x-4">
                       {project.github && (
                         <span className="text-muted-foreground font-medium">

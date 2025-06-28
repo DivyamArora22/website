@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import { Link } from 'wouter';
 
 export default function DatapathLayoutProject() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
