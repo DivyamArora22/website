@@ -396,7 +396,7 @@ export default function DatapathLayoutProject() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://github.com/DivyamArora22"
+                href="https://github.com/DivyamArora22/vlsi-project"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
@@ -404,10 +404,6 @@ export default function DatapathLayoutProject() {
                 <i className="fab fa-github mr-2"></i>
                 View Design Files
               </a>
-              <button className="inline-flex items-center justify-center border border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-                <i className="fas fa-download mr-2"></i>
-                Download Reports
-              </button>
             </div>
           </div>
         </div>
