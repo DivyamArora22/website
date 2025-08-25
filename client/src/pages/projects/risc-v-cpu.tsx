@@ -279,7 +279,7 @@ export default function RiscVCpuProject() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://github.com/DivyamArora22"
+                href="https://github.com/DivyamArora22/ooo-processor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
@@ -287,10 +287,6 @@ export default function RiscVCpuProject() {
                 <i className="fab fa-github mr-2"></i>
                 View Source Code
               </a>
-              <button className="inline-flex items-center justify-center border border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-                <i className="fas fa-play mr-2"></i>
-                Watch Demo
-              </button>
             </div>
           </div>
         </div>
