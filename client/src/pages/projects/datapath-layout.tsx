@@ -108,9 +108,9 @@ export default function DatapathLayoutProject() {
                     <h4 className="text-lg font-medium text-gray-800">Library Development Process</h4>
                   </div>
                   <p className="text-gray-600 leading-relaxed">
-                    Developed a comprehensive standard cell library from ground up, including basic logic gates, 
-                    complex gates, sequential elements, and specialized datapath cells. Each cell was 
-                    characterized for timing, power, and area.
+                    Built a standard cell library from the ground up, including basic logic gates, complex gates,
+                    sequential elements, and specialized datapath cells. Ensured consistent cell height, rail alignment,
+                    and row compatibility for clean abutment.
                   </p>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-4">
@@ -125,31 +125,33 @@ export default function DatapathLayoutProject() {
                   </ul>
                 </div>
               </div>
+
               <div className="flex flex-col space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6 flex-1">
                   <div className="flex items-center mb-3">
-                    <i className="fas fa-chart-line text-blue-500 text-xl mr-3"></i>
-                    <h4 className="text-lg font-medium text-gray-800">Characterization & Modeling</h4>
+                    <i className="fas fa-tools text-blue-500 text-xl mr-3"></i>
+                    <h4 className="text-lg font-medium text-gray-800">Library Integration & Physical Verification</h4>
                   </div>
                   <p className="text-gray-600 leading-relaxed">
-                    Performed comprehensive SPICE simulations to extract timing arcs, power consumption, 
-                    and noise margins. Generated Liberty (.lib) files with detailed timing models for 
-                    synthesis and static timing analysis tools.
+                    Generated LEF abstracts and integrated the library into the automated P&R flow.
+                    Performed DRC/LVS on each cell and validated abutment (well continuity, rail alignment, and pin access).
+                    Verified row/site compatibility and routing track alignment before using the library in full-chip layout.
                   </p>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-4">
-                  <h5 className="font-medium text-gray-800 mb-2">Characterization Parameters:</h5>
+                  <h5 className="font-medium text-gray-800 mb-2">Verification Checklist:</h5>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Setup/Hold times</li>
-                    <li>• Propagation delays</li>
-                    <li>• Dynamic power consumption</li>
-                    <li>• Input capacitance</li>
-                    <li>• Drive strength analysis</li>
+                    <li>• DRC/LVS clean for all cells</li>
+                    <li>• Cell abutment & well continuity checks</li>
+                    <li>• Power/ground rail alignment across rows</li>
+                    <li>• Pin accessibility & routing track alignment</li>
+                    <li>• LEF abstracts validated in P&R flow</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+
 
           {/* Manual vs Automated Design Comparison */}
           <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
