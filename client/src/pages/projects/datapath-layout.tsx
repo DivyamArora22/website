@@ -346,7 +346,7 @@ export default function DatapathLayoutProject() {
                   <li>Technology Node: 45nm CMOS</li>
                   <li>Supply Voltage: 1.1V nominal</li>
                   <li>Metal Layers: 6 (M1-M6)</li>
-                  <li>Standard Cell Height: 2.5μm</li>
+                  <li>Standard Cell Height: 1.65μm</li>
                 </ul>
               </div>
               <div>
