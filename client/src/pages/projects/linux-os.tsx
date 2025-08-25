@@ -148,7 +148,7 @@ export default function LinuxOsProject() {
           {/* GitHub Link */}
           <div className="text-center">
             <a 
-              href="https://github.com/DivyamArora22"
+              href="https://github.com/DivyamArora22/VortexOS"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors"
