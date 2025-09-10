@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "concurrently -k \"npm:dev:*\"",
     "dev:server": "tsx server/index.ts",
-    "dev:client": "npm --prefix client run dev",
-
-    "build": "npm --prefix client ci --silent && npm --prefix client run build && tsc -p tsconfig.json",
+    "dev:client": "vite",
+  
+    "build": "vite build && tsc -p tsconfig.json",
     "start": "node server/index.ts"
   },
+
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
