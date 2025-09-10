@@ -49,8 +49,7 @@ function initOnce(): Promise<void> {
       const status = err.status || err.statusCode || 500;
       const message = err.message || "Internal Server Error";
       res.status(status).json({ message });
-      // keep original behavior
-      throw err;
+      console.error(err);
     });
 
     // Dev: Vite middleware after routes; Prod: serve built static
