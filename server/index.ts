@@ -1,5 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+// ⛔ removed: import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
@@ -13,12 +13,12 @@ app.use((req, res, next) => {
   const path = req.path;
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
 
-  const originalResJson = res.json;
+  // keep original json, and reassign with a typed-safe wrapper
+  const originalResJson = res.json.bind(res) as (body: any, ...args: any[]) => Response;
 
-  res.json = function (bodyJson, ...args) {
+  (res as Response & { json: (body: any, ...args: any[]) => Response }).json = function (bodyJson: any, ...args: any[]) {
     capturedJsonResponse = bodyJson;
-
-    return originalResJson.apply(res, [bodyJson, ...args]);
+    return originalResJson(bodyJson, ...args);
   };
 
   res.on("finish", () => {
@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 // Bootstrap once (cold start on Vercel; once on local)
 let initPromise: Promise<void> | null = null;
 
-function initOnce() {
+function initOnce(): Promise<void> {
   if (initPromise) return initPromise;
 
   initPromise = (async () => {
@@ -53,7 +53,7 @@ function initOnce() {
       throw err;
     });
 
-    // Dev: use Vite middleware after routes; Prod: serve built static
+    // Dev: Vite middleware after routes; Prod: serve built static
     if (app.get("env") === "development") {
       await setupVite(app, server);
     } else {
@@ -62,13 +62,9 @@ function initOnce() {
 
     // Local dev server ONLY — never listen on Vercel
     if (process.env.VERCEL !== "1") {
-      const port = process.env.PORT || 8000;
+      const port = Number(process.env.PORT || 8000);
       server.listen(
-        {
-          port: Number(port),
-          host: "0.0.0.0",
-          reusePort: true,
-        },
+        { port, host: "0.0.0.0", reusePort: true },
         () => log(`serving on port ${port}`)
       );
     }
@@ -80,7 +76,7 @@ function initOnce() {
 // Vercel serverless entrypoint
 export default async function handler(req: any, res: any) {
   await initOnce();
-  // Express instances are request handlers
+  // Express app is a request handler
   (app as any)(req, res);
 }
 
