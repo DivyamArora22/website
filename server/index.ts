@@ -78,9 +78,9 @@ function initOnce() {
 }
 
 // Vercel serverless entrypoint
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   await initOnce();
-  // @ts-ignore: Express app is a request handler (req,res)
+  // @ts-ignore Express app is a handler
   app(req, res);
 }
 
