@@ -80,8 +80,8 @@ function initOnce() {
 // Vercel serverless entrypoint
 export default async function handler(req: any, res: any) {
   await initOnce();
-  // @ts-ignore Express app is a handler
-  app(req, res);
+  // Express instances are request handlers
+  (app as any)(req, res);
 }
 
 // For local dev (so `node server/index.ts` still works if you use it)
