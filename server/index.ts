@@ -54,10 +54,13 @@ function initOnce(): Promise<void> {
     });
 
     // Dev: Vite middleware after routes; Prod: serve built static
-    if (app.get("env") === "development") {
-      await setupVite(app, server);
-    } else {
-      serveStatic(app);
+    // On Vercel, static files are served by the platform so we skip this step
+    if (process.env.VERCEL !== "1") {
+      if (app.get("env") === "development") {
+        await setupVite(app, server);
+      } else {
+        serveStatic(app);
+      }
     }
 
     // Local dev server ONLY — never listen on Vercel
