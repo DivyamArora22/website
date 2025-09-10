@@ -14,10 +14,10 @@ app.use((req, res, next) => {
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
 
   const originalResJson = res.json;
-  // @ts-expect-error overload alignment
+
   res.json = function (bodyJson, ...args) {
     capturedJsonResponse = bodyJson;
-    // @ts-expect-error overload alignment
+
     return originalResJson.apply(res, [bodyJson, ...args]);
   };
 
